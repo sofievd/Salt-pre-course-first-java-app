@@ -22,6 +22,13 @@ public class Greeter {
     if(namePassedIn.isBlank()){
       return "Error. Enter a name";
     }
+    if(namePassedIn.contains(",")){
+      int index = namePassedIn.indexOf(",");
+
+      String firstName = namePassedIn.substring(0,index);
+      String secondName= namePassedIn.substring(index+2);
+      return "Welcome to SALT, " + firstName + " and " + secondName;
+    }
     else{
       return "Welcome to SALT, " + namePassedIn ;
     }

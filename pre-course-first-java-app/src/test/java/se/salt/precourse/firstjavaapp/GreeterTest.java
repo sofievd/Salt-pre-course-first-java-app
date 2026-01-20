@@ -28,4 +28,11 @@ class GreeterTest {
         assertEquals(expectedGreeting, greeting);
     }
 
+    @Test
+    void greetTestMarcusAndEliza() {
+        String greeting = Greeter.greet("Marcus, Eliza");
+        String expectedGreeting = "Welcome to SALT, Marcus and Eliza";
+        assertEquals(expectedGreeting, greeting);
+    }
+
 }
