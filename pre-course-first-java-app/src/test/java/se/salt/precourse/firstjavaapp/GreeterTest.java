@@ -21,4 +21,11 @@ class GreeterTest {
         assertEquals(expectedGreeting, greeting);
     }
 
+    @Test
+    void greetTestEmptyString() {
+        String greeting = Greeter.greet("");
+        String expectedGreeting = "Error. Enter a name";
+        assertEquals(expectedGreeting, greeting);
+    }
+
 }

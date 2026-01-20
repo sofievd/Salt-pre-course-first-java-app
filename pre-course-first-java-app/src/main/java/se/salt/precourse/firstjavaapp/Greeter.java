@@ -19,7 +19,12 @@ public class Greeter {
             "\n Today it is " + daysLeft + " days left until the course starts" ;
   }
   public static String greet(String namePassedIn) {
-    return "Welcome to SALT, " + namePassedIn ;
+    if(namePassedIn.isBlank()){
+      return "Error. Enter a name";
+    }
+    else{
+      return "Welcome to SALT, " + namePassedIn ;
+    }
   }
 
   public static void main(String[] args) throws IOException {
