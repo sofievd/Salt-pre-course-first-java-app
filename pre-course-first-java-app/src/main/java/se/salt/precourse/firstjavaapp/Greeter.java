@@ -18,6 +18,9 @@ public class Greeter {
     return "Welcome to SALT, " + namePassedIn +
             "\n Today it is " + daysLeft + " days left until the course starts" ;
   }
+  public static String greet(String namePassedIn) {
+    return "Welcome to SALT, " + namePassedIn ;
+  }
 
   public static void main(String[] args) throws IOException {
     System.out.print("What is your name? ");
