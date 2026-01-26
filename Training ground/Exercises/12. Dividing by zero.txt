@@ -1,9 +1,0 @@
-Your optional exercise for this chapter is to write the following statement — int c = 30/0 — within a program and execute it.
-
-
-
-When you execute this, you'll see an exception, so I want you to update that program to handle the exception.
-
-Then print a statement after the division to say, "Division is fun." This statement should be outputted no matter what happens in your program.
-
-Good luck.
