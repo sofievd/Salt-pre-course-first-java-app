@@ -1,5 +1,6 @@
 package se.salt.precourse.firstjavaapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +15,8 @@ import java.time.temporal.ChronoUnit;
 
 @SpringBootApplication
 public class Greeter implements CommandLineRunner {
-
+  @Autowired
+  StartDateHandler startDateHandler;
   public static String greet(String namePassedIn) {
     if(namePassedIn.isBlank()){
       return "Error. Enter a name";
@@ -49,7 +51,6 @@ public class Greeter implements CommandLineRunner {
     String date = reader.readLine();
     System.out.println("start date: " + date);
 
-    StartDateHandler startDateHandler = new StartDateHandler();
     if(startDateHandler.dateHasOnlyNunmbers(date)){
       System.out.println("You start in " + startDateHandler.daysToCourseStart(date) + " day. Better start cracking on that Pre-course!!");
     }else{
