@@ -1,5 +1,9 @@
 package se.salt.precourse.firstjavaapp;
 
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,16 +12,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
+@SpringBootApplication
+public class Greeter implements CommandLineRunner {
 
-public class Greeter {
-//  private static String greet(String namePassedIn, String date) {
-//    LocalDate now = LocalDate.now();
-//    LocalDate localDate = LocalDate.parse(date);
-//    long daysLeft = ChronoUnit.DAYS.between(now, localDate);
-//
-//    return "Welcome to SALT, " + namePassedIn +
-//            "\n Today it is " + daysLeft + " days left until the course starts" ;
-//  }
   public static String greet(String namePassedIn) {
     if(namePassedIn.isBlank()){
       return "Error. Enter a name";
@@ -35,6 +32,11 @@ public class Greeter {
   }
 
   public static void main(String[] args) throws IOException {
+    SpringApplication.run(Greeter.class, args);
+  }
+
+  @Override
+  public void run(String... args) throws Exception {
     System.out.print("What is your name? ");
 
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -49,7 +51,7 @@ public class Greeter {
 
     StartDateHandler startDateHandler = new StartDateHandler();
     if(startDateHandler.dateHasOnlyNunmbers(date)){
-          System.out.println("You start in " + startDateHandler.daysToCourseStart(date) + " day. Better start cracking on that Pre-course!!");
+      System.out.println("You start in " + startDateHandler.daysToCourseStart(date) + " day. Better start cracking on that Pre-course!!");
     }else{
       System.out.println("please provide a valid date.");
     }
